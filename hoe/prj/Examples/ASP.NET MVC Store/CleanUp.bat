@@ -1,0 +1,1 @@
+MSBuild "ASP.NET MVC Store.csproj" /target:CleanUp

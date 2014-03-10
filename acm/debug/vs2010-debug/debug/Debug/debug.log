@@ -1,0 +1,17 @@
+﻿生成启动时间为 2014/3/8 1:36:43。
+     1>项目“F:\GitHub\acm\debug\vs2010-debug\debug\debug.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\debug.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         所有输出均为最新。
+       Link:
+         D:\Application\Visual Studio 2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\GitHub\acm\debug\vs2010-debug\Debug\debug.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\debug.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\GitHub\acm\debug\vs2010-debug\Debug\debug.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\GitHub\acm\debug\vs2010-debug\Debug\debug.lib" /MACHINE:X86 Debug\pat1074.obj
+         debug.vcxproj -> F:\GitHub\acm\debug\vs2010-debug\Debug\debug.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\GitHub\acm\debug\vs2010-debug\Debug\debug.exe;#1" /manifest Debug\debug.exe.intermediate.manifest
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(574,5): error MSB6006: “mt.exe”已退出，代码为 31。
+     1>已完成生成项目“F:\GitHub\acm\debug\vs2010-debug\debug\debug.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:02.89

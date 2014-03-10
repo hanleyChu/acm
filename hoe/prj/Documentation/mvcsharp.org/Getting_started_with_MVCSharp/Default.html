@@ -1,0 +1,813 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<!-- Mirrored from mvcsharp.org/Getting_started_with_MVCSharp/Default.aspx by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 30 Oct 2008 03:46:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+<head><title>
+	Getting started with MVC# framework
+</title><link href="../Styles.css" rel="stylesheet" type="text/css" /></head>
+<body>
+    <form name="aspnetForm" method="post" action="http://mvcsharp.org/Getting_started_with_MVCSharp/Default.aspx" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMDUyNjYzMjgPZBYCZg9kFgICAw9kFgICCQ88KwAJAgAPFgQeDU5ldmVyRXhwYW5kZWRkHgtfIURhdGFCb3VuZGdkCBQrAAUFDzA6MCwwOjEsMDoyLDA6MxQrAAIWDB4EVGV4dAUNRG9jdW1lbnRhdGlvbh4FVmFsdWUFDURvY3VtZW50YXRpb24eC05hdmlnYXRlVXJsBRMvRG9jdW1lbnRhdGlvbi5hc3B4HghEYXRhUGF0aAUTL2RvY3VtZW50YXRpb24uYXNweB4JRGF0YUJvdW5kZx4IRXhwYW5kZWRnFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYKHwIFCE92ZXJ2aWV3HwMFCE92ZXJ2aWV3HwQFFi9PdmVydmlldy9EZWZhdWx0LmFzcHgfBQUWL292ZXJ2aWV3L2RlZmF1bHQuYXNweB8GZ2QUKwACFgwfAgUIRXhhbXBsZXMfAwUIRXhhbXBsZXMfBAUOL0V4YW1wbGVzLmFzcHgfBQUOL2V4YW1wbGVzLmFzcHgfBmcfB2cUKwAHBRcwOjAsMDoxLDA6MiwwOjMsMDo0LDA6NRQrAAIWDh8CBRwxLiBHZXR0aW5nIHN0YXJ0ZWQgd2l0aCBNVkMjHwMFHDEuIEdldHRpbmcgc3RhcnRlZCB3aXRoIE1WQyMfBAUrL0dldHRpbmdfc3RhcnRlZF93aXRoX01WQ1NoYXJwL0RlZmF1bHQuYXNweB8FBSsvZ2V0dGluZ19zdGFydGVkX3dpdGhfbXZjc2hhcnAvZGVmYXVsdC5hc3B4HwZnHghTZWxlY3RlZGcfB2dkFCsAAhYKHwIFFDIuIFRhc2tzIGludGVyYWN0aW9uHwMFFDIuIFRhc2tzIGludGVyYWN0aW9uHwQFHy9UYXNrc19JbnRlcmFjdGlvbi9EZWZhdWx0LmFzcHgfBQUfL3Rhc2tzX2ludGVyYWN0aW9uL2RlZmF1bHQuYXNweB8GZ2QUKwACFgofAgUeMy4gVXNpbmcgV2luZm9ybXMgdmlld3MgZW5naW5lHwMFHjMuIFVzaW5nIFdpbmZvcm1zIHZpZXdzIGVuZ2luZR8EBSkvVXNpbmdfV2luZm9ybXNfdmlld3NfZW5naW5lL0RlZmF1bHQuYXNweB8FBSkvdXNpbmdfd2luZm9ybXNfdmlld3NfZW5naW5lL2RlZmF1bHQuYXNweB8GZ2QUKwACFgofAgUoNC4gUmV3b3JraW5nIEFTUC5ORVQgTVZDIFN0b3JlIHdpdGggTVZDIx8DBSg0LiBSZXdvcmtpbmcgQVNQLk5FVCBNVkMgU3RvcmUgd2l0aCBNVkMjHwQFKC9SZXdvcmtpbmdfQVNQTkVUX01WQ19TdG9yZS9EZWZhdWx0LmFzcHgfBQUoL3Jld29ya2luZ19hc3BuZXRfbXZjX3N0b3JlL2RlZmF1bHQuYXNweB8GZ2QUKwACFgofAgUZNS4gQWR2YW5jZWQgQ3VzdG9taXphdGlvbh8DBRk1LiBBZHZhbmNlZCBDdXN0b21pemF0aW9uHwQFJC9BZHZhbmNlZF9DdXN0b21pemF0aW9uL0RlZmF1bHQuYXNweB8FBSQvYWR2YW5jZWRfY3VzdG9taXphdGlvbi9kZWZhdWx0LmFzcHgfBmdkFCsAAhYKHwIFGjYuIFNpbHZlcmxpZ2h0IGFuZCAuTkVUIENGHwMFGjYuIFNpbHZlcmxpZ2h0IGFuZCAuTkVUIENGHwQFES9TaWx2ZXJsaWdodC5hc3B4HwUFES9zaWx2ZXJsaWdodC5hc3B4HwZnZBQrAAIWCh8CBQhBUEkgRG9jcx8DBQhBUEkgRG9jcx8EBRQvQVBJX0RvY3MvSW5kZXguYXNweB8FBRQvYXBpX2RvY3MvaW5kZXguYXNweB8GZ2QUKwACFgofAgULRGV2ZWxvcG1lbnQfAwULRGV2ZWxvcG1lbnQfBAURL0RldmVsb3BtZW50LmFzcHgfBQURL2RldmVsb3BtZW50LmFzcHgfBmcUKwAFBQ8wOjAsMDoxLDA6MiwwOjMUKwACFgofAgUYMS4gQmFzaWNzIG9mIE1WQyBhbmQgTVZQHwMFGDEuIEJhc2ljcyBvZiBNVkMgYW5kIE1WUB8EBSMvQmFzaWNzX29mX01WQ19hbmRfTVZQL0RlZmF1bHQuYXNweB8FBSMvYmFzaWNzX29mX212Y19hbmRfbXZwL2RlZmF1bHQuYXNweB8GZ2QUKwACFgofAgUmMi4gSW1wbGVtZW50aW5nIGNvcmUgTVZQIGZ1bmN0aW9uYWxpdHkfAwUmMi4gSW1wbGVtZW50aW5nIGNvcmUgTVZQIGZ1bmN0aW9uYWxpdHkfBAUxL0ltcGxlbWVudGluZ19jb3JlX01WUF9mdW5jdGlvbmFsaXR5L0RlZmF1bHQuYXNweB8FBTEvaW1wbGVtZW50aW5nX2NvcmVfbXZwX2Z1bmN0aW9uYWxpdHkvZGVmYXVsdC5hc3B4HwZnZBQrAAIWCh8CBSIzLiBEZXNpZ25pbmcgV2luZm9ybXMgdmlld3MgZW5naW5lHwMFIjMuIERlc2lnbmluZyBXaW5mb3JtcyB2aWV3cyBlbmdpbmUfBAUtL0Rlc2lnbmluZ19XaW5mb3Jtc192aWV3c19lbmdpbmUvRGVmYXVsdC5hc3B4HwUFLS9kZXNpZ25pbmdfd2luZm9ybXNfdmlld3NfZW5naW5lL2RlZmF1bHQuYXNweB8GZ2QUKwACFgofAgUeNC4gU3Ryb25nbHkgdHlwZWQgYXNzb2NpYXRpb25zHwMFHjQuIFN0cm9uZ2x5IHR5cGVkIGFzc29jaWF0aW9ucx8EBSkvU3Ryb25nbHktdHlwZWRfYXNzb2NpYXRpb25zL0RlZmF1bHQuYXNweB8FBSkvc3Ryb25nbHktdHlwZWRfYXNzb2NpYXRpb25zL2RlZmF1bHQuYXNweB8GZ2QUKwACFgofAgUHQ2hhbmdlcx8DBQdDaGFuZ2VzHwQFDS9DaGFuZ2VzLmFzcHgfBQUNL2NoYW5nZXMuYXNweB8GZ2QUKwACFgofAgUIRmVlZGJhY2sfAwUIRmVlZGJhY2sfBAUOL0ZlZWRiYWNrLmFzcHgfBQUOL2ZlZWRiYWNrLmFzcHgfBmdkFCsAAhYKHwIFCERvd25sb2FkHwMFCERvd25sb2FkHwQFDi9Eb3dubG9hZC5hc3B4HwUFDi9kb3dubG9hZC5hc3B4HwZnZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFCmN0bDAwJE1lbnU4b0A1I3NTx5kB6oEX9nA5BNzg3g==" />
+
+        <div id="pageWrapper">
+            
+            <div>
+                <img id="ctl00_logo" src="../Images/logo.PNG" border="0" />
+                <div id="breadcrumbs">
+                    <div><img id="ctl00_spacer" src="../Images/spacer.bmp" height="1" width="875" border="0" /></div>
+                    <span id="ctl00_SiteMapPath"><a href="#ctl00_SiteMapPath_SkipLink"><img alt="Skip Navigation Links" height="0" width="0" src="../WebResourcee862.gif?d=-tf2UOPilGOzHQ2P_iOPlg2&amp;t=633440833918844552" border="0" /></a><span><a href="../Default.html">Home</a></span><span>&#160;&gt;&#160;</span><span><a href="../Documentation.html">Documentation</a></span><span>&#160;&gt;&#160;</span><span><a href="../Examples.html">Examples</a></span><span>&#160;&gt;&#160;</span><span>1. Getting started with MVC#</span><a id="ctl00_SiteMapPath_SkipLink"></a></span>
+                </div>
+            </div>
+            <div id="menuAndContent">
+                <div id="menu">
+                    <a href="#ctl00_Menu_SkipLink"><img alt="Skip Navigation Links." src="../WebResourcee862.gif?d=-tf2UOPilGOzHQ2P_iOPlg2&amp;t=633440833918844552" width="0" height="0" border="0" /></a><table id="ctl00_Menu" cellpadding="0" cellspacing="0" border="0" width="238"><tr><td>
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="menuItem"><a class="menuItem" href="../Documentation.html" id="ctl00_Menun0">Documentation</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="../Overview/Default.html" id="ctl00_Menun1">Overview</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="../Examples.html" id="ctl00_Menun2">Examples</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItemSelected menuItem"><a class="menuItemSelected menuItem" href="Default.html" id="ctl00_Menun3">1. Getting started with MVC#</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="../Tasks_Interaction/Default.html" id="ctl00_Menun4">2. Tasks interaction</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="../Using_Winforms_views_engine/Default.html" id="ctl00_Menun5">3. Using Winforms views engine</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="../Reworking_ASPNET_MVC_Store/Default.html" id="ctl00_Menun6">4. Reworking ASP.NET MVC Store with MVC#</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="../Advanced_Customization/Default.html" id="ctl00_Menun7">5. Advanced Customization</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="../Silverlight.html" id="ctl00_Menun8">6. Silverlight and .NET CF</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="http://mvcsharp.org/API_Docs/Index.aspx" id="ctl00_Menun9">API Docs</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><table width="20">
+				<tr>
+					<td></td>
+				</tr>
+			</table></td><td class="menuItem"><a class="menuItem" href="../Development.html" id="ctl00_Menun10">Development</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="menuItem"><a class="menuItem" href="../Changes.html" id="ctl00_Menun15">Changes</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="menuItem"><a class="menuItem" href="../Feedback.html" id="ctl00_Menun16">Feedback</a></td>
+		</tr>
+	</table><table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="menuItem"><a class="menuItem" href="../Download.html" id="ctl00_Menun17">Download</a></td>
+		</tr>
+	</table>
+</td></tr></table><a id="ctl00_Menu_SkipLink"></a>
+                </div> 
+                <div id="content">  
+                    
+<h1>Getting started with MVC# framework</h1>
+    <p>
+        <em>The source code of this example can be found under "Examples\Basics\" subfolder
+            of the MVC# framework root folder. The framework itself can be downloaded from <a
+                href="http://www.mvcsharp.org/Download.aspx">www.MVCSharp.org/download.aspx</a>.</em></p>
+    <p>
+        <a href="#Introduction">Introduction</a><br />
+        <a href="#The Model">The Model</a><br />
+        <a href="#Application logic">Application logic</a><br />
+        &nbsp; &nbsp; <a href="#Main Task">Main Task</a><br />
+        &nbsp; &nbsp; <a href="#Customers Controller">Customers Controller</a><br />
+        &nbsp; &nbsp; <a href="#Orders Controller">Orders Controller</a><br />
+        <a href="#Presentation">Presentation</a><br />
+        &nbsp; &nbsp; <a href="#Customers view (Win)">Customers view (Win)</a><br />
+        &nbsp; &nbsp; <a href="#Orders view (Win)">Orders view (Win)</a><br />
+        &nbsp; &nbsp; <a href="#Customers view (Web)">Customers view (Web)</a><br />
+        &nbsp; &nbsp; <a href="#Orders view (Web)">Orders view (Web)</a><br />
+        &nbsp; &nbsp; <a href="#Customers view (Silverlight)">Customers view (Silverlight)</a><br />
+        &nbsp; &nbsp; <a href="#Orders view (Silverlight)">Orders view (Silverlight)</a><br />        
+        <a href="#Starting the application">Starting the application</a><br />
+        <a href="#Summary">Summary</a><br />
+        </p>
+
+<a id="Introduction"></a><h2>Introduction</h2>
+    <p>
+        Architectural patterns such as Model-View-Controller are gaining more and more popularity
+        nowdays. The reason is simple: they improve applications' design and raise their
+        maintainability by splitting applications into three layers with distinct responsibilities.
+        However incorporating such patterns into an application requires some effort - the
+        fact that may discourage developers from using MVC and similar approaches. Fortunately
+        a number of frameworks exist, which minimize the overhead of using architectural
+        patterns such as MVC. One of such frameworks is <a href="http://www.mvcsharp.org/">MVC#</a>.
+        It assists developers in using the Model-View-Presenter pattern (an evolution of
+        MVC) by taking on itself all routine work, allowing to develop 3-tier MVP applications
+        with ease.&nbsp;</p>
+    <p>
+        In this article we will demonstrate how to build a Model-View-Presenter application
+        with the help of MVC# Framework. Our first example application will be intended
+        for managing customers and their orders. It will consist of two views: first one
+        displays
+        customers and has a button to switch to the second view. The second view lists
+        orders for the selected customer and has buttons to operate on the order selected:
+        “Accept”, “Cancel” and “Ship”. We will implement views for Windows, Web and Silverlight
+        presentation
+        platforms, revealing how MVC# allows to target the same application to different
+        presentation mechanisms.</p>
+    <p>
+        Before reading the article be sure to get acquainted with the Model-View-Presenter
+        essentials. A gentle introduction to MVP and MVC can be found <a href="http://www.mvcsharp.org/Basics_of_MVC_and_MVP/Default.aspx" title="Model-View-Presenter framework for .NET">
+            here</a>. Also note that the code listings throughout the article may omit minor
+        details for simplicity sake. For exact code see the example sources.</p>
+    <p><img src="Images/1.PNG"/></p>
+    <a id="The Model"></a><h2>
+        The Model</h2>
+    <p>
+        Firstly we are going to create the model part of the MVP triad. It will consist
+        of two classes: Customer and Order. While the Customer class just holds a list of
+        orders and a static list of all customers, the Order is a little more complicated
+        having three operations.</p>
+    <pre><span style="color: #0000FF;">namespace</span><span style="color: #000000;"> MVCSharp.Examples.Basics.Model
+{
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> Customer
+    {
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">static</span><span style="color: #000000;"> </span><span style="color: #0000FF;">readonly</span><span style="color: #000000;"> List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Customer</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> AllCustomers </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Customer</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">();
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">readonly</span><span style="color: #000000;"> List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Order</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> Orders </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Order</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">();
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">string</span><span style="color: #000000;"> name;
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> Customer(</span><span style="color: #0000FF;">string</span><span style="color: #000000;"> name)
+        {
+            </span><span style="color: #0000FF;">this</span><span style="color: #000000;">.name </span><span style="color: #000000;">=</span><span style="color: #000000;"> name;
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">string</span><span style="color: #000000;"> Name
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> name; }
+        }
+    }
+}</span></pre>
+    <pre><span style="color: #0000FF;">namespace</span><span style="color: #000000;"> MVCSharp.Examples.Basics.Model
+{
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> Order
+    {
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> OrderState state </span><span style="color: #000000;">=</span><span style="color: #000000;"> OrderState.Open;
+        
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> OrderState State
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> state; }
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> Accept()
+        {
+            </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (State </span><span style="color: #000000;">==</span><span style="color: #000000;"> OrderState.Open)
+                state </span><span style="color: #000000;">=</span><span style="color: #000000;"> OrderState.Pending;
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> Ship()
+        {
+            </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (State </span><span style="color: #000000;">==</span><span style="color: #000000;"> OrderState.Pending)
+                state </span><span style="color: #000000;">=</span><span style="color: #000000;"> OrderState.Shipped;
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> Cancel()
+        {
+            </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (State </span><span style="color: #000000;">!=</span><span style="color: #000000;"> OrderState.Shipped)
+                state </span><span style="color: #000000;">=</span><span style="color: #000000;"> OrderState.Cancelled;
+        }
+    }
+}</span></pre>
+    <a id="Application logic"></a><h2>
+        Application Logic</h2>
+    <a id="Main Task"></a><h3>
+        Main Task</h3>
+    <p>
+        Every MVC# application consists of one or more tasks. A task is an independent set
+        of actions which accomplish some job, typically representing a use case for the system.
+        Tasks may be "Book ticket", "Calculate taxes" and others. In our example application
+        there will be a single task for managing customers and their orders. Each task consists
+        of a number of views which a user traverses to complete the task. Our example task
+        will have two views: "Customers" and "Orders".</p>
+    <p>
+        In order to describe a task we should declare its class. For each view a public
+        constant field, initialized with the view name, should be added to the task class.
+        According to the Model-View-Presenter pattern a view is never alone, it always exists
+        in pair with its controller (the view-controller pair is referred to as interaction
+        point), that is why for each view we also specify its controller type with the [InteractionPoint]
+        attribute.</p>
+    <pre><span style="color: #0000FF;">    public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> MainTask
+    {
+        [InteractionPoint(</span><span style="color: #0000FF;">typeof</span><span style="color: #000000;">(CustomersController), Orders)]
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">const</span><span style="color: #000000;"> </span><span style="color: #0000FF;">string</span><span style="color: #000000;"> Customers </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Customers</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">;
+
+        [InteractionPoint(</span><span style="color: #0000FF;">typeof</span><span style="color: #000000;">(OrdersController), Customers)]
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">const</span><span style="color: #000000;"> </span><span style="color: #0000FF;">string</span><span style="color: #000000;"> Orders </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Orders</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">;
+    }</span></pre>
+    <p>
+        Besides the controller type, [InteractionPoint] attribute specifies permitted navigation
+        targets. Thus above we have stated both Customers-&gt;Orders and Orders-&gt;Customers
+        transitions possible.</p>
+    <p>
+        In MVC# all tasks should implement the ITask interface. Though this interface is rather simple
+        and can be implemented manually, the MVC# framework already comes with a basic
+        implementation TaskBase. We will use it as a base for our MainTask class.</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> MainTask : TaskBase
+    {
+        ...
+    }</span></pre>
+    <p>
+        A part of the ITask interface is the OnStart operation. It should be implemented
+        to define actions performed on task start. In our case we want the customers view
+        to be activated when the task starts:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> MainTask : TaskBase
+    ...
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">override</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> OnStart(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> param)
+        {
+            Navigator.NavigateDirectly(Customers);
+        }
+</span></pre>
+    <span style="font-size: 12px; color: #000000; font-family: 'Courier New', Courier, mono;
+        background-color: #ffffb0"></span>
+    <p>
+        NavigateDirectly method activates a view regardless of the current view (which is
+        null at the beginning) and of possible navigation routes.</p>
+    <p>
+        A task should be a container for global logic, used across the entire task and
+        consumed by more than one controller. In our example such global meaning will have
+        the currently selected customer. As we will see later it will be used by both controllers.
+        That is why we will include a CurrentCustomer property to the MainTask. Moreover
+        the setter for this property will generate a CurrentCustomerChanged event:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> MainTask : TaskBase
+        ...
+
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> Customer currentCustomer;
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">event</span><span style="color: #000000;"> EventHandler CurrentCustomerChanged;
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> Customer CurrentCustomer
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> currentCustomer; }
+            </span><span style="color: #0000FF;">set</span><span style="color: #000000;">
+            {
+                currentCustomer </span><span style="color: #000000;">=</span><span style="color: #000000;"> value;
+                </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (CurrentCustomerChanged </span><span style="color: #000000;">!=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">null</span><span style="color: #000000;">)
+                    CurrentCustomerChanged(</span><span style="color: #0000FF;">this</span><span style="color: #000000;">, EventArgs.Empty);
+            }
+        }
+</span></pre>
+    <p>
+        Now we are ready to deal with the rest of the application logic placed in the
+        controller classes. Let us start with the CustomersController class.</p>
+    <a id="Customers Controller"></a><h3>
+        Customers Controller</h3>
+    <p>
+        Generally controllers in the Model-View-Presenter paradigm handle the application
+        flow: they process UI events using the Model tier classes when necessary, and decide
+        what to display in the UI. And so the CustomersController should do. First of all
+        it should configure the view with the customers list and the current customer. This
+        should be done during the initialization phase when
+        the controller is linked to its view:</p>
+    <pre><span style="color: #0000FF;">namespace</span><span style="color: #000000;"> MVCSharp.Examples.Basics.ApplicationLogic
+{
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> CustomersController : ControllerBase
+    {
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">override</span><span style="color: #000000;"> IView View
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">base</span><span style="color: #000000;">.View; }
+            </span><span style="color: #0000FF;">set</span><span style="color: #000000;">
+            {
+                <span style="color: #0000FF;">base</span><span style="color: #000000;">.View </span><span style="color: #000000;">=</span><span style="color: #000000;"> value;
+                (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> ICustomersView).SetCustomersList(Customer.AllCustomers);
+                (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> ICustomersView).CurrentCustomer </span><span style="color: #000000;">=</span><span style="color: #000000;">
+                                        (Task </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> MainTask).CurrentCustomer;</span>
+            }
+        }
+    }
+}</span></pre>
+    <p>
+        Note that controllers in MVC# should conform to the IController interface. But as it is with
+        the ITask interface MVC# provides a common IController implementation ControllerBase
+        which we are using.</p>
+    <p>
+        Next, CustomersController should process UI events. To be exact it should handle the “Show Orders” command from the UI and
+        process the change of the customer currently selected in the customers form:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> CustomersController : ControllerBase
+    {
+        ...
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> ShowOrders()
+        {
+            Task.Navigator.Navigate(</span><span style="color: #000000;">MainTask.Orders</span><span style="color: #000000;">);
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> CurrentCustomerChanged()
+        {
+            (Task </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> MainTask).CurrentCustomer </span><span style="color: #000000;">=</span><span style="color: #000000;"> (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> ICustomersView)
+                                                 .CurrentCustomer;
+        }
+    }
+</span></pre>
+    <p>
+        ICustomersView is the interface that the customers view should implement:</p>
+    <pre><span style="color: #0000FF;">namespace</span><span style="color: #000000;"> MVCSharp.Examples.Basics.ApplicationLogic
+{
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">interface</span><span style="color: #000000;"> ICustomersView
+    {
+        </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> SetCustomersList(List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Customer</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> customers);
+
+        Customer CurrentCustomer
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;">;
+            </span><span style="color: #0000FF;">set</span><span style="color: #000000;">;
+        }
+    }
+}</span></pre>
+    <a id="Orders Controller"></a><h3>
+        Orders Controller</h3>
+    <p>
+        The logic of displaying orders is quite simple: we should track the change of current
+        customer and display its orders:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> OrdersController : ControllerBase
+    {
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">override</span><span style="color: #000000;"> ITask Task
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">base</span><span style="color: #000000;">.Task; }
+            </span><span style="color: #0000FF;">set</span><span style="color: #000000;">
+            {
+                </span><span style="color: #0000FF;">base</span><span style="color: #000000;">.Task </span><span style="color: #000000;">=</span><span style="color: #000000;"> value;
+                (Task </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> MainTask).CurrentCustomerChanged </span><span style="color: #000000;">+=
+                                   </span><span style="color: #000000;">CurrentCustomerChanged;
+            }
+        }
+
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> CurrentCustomerChanged(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, EventArgs e)
+        {
+            (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IOrdersView).SetOrdersList((Task </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> MainTask)
+                                                .CurrentCustomer.Orders);
+        }
+    }
+</span></pre>
+    <p>
+        In the above code we first subscribe to the MainTask.CurrentCustomerChanged event
+        as soon as the controller is linked to the task object. Then we just handle the
+        customer change event by passing the corresponding orders to the view.</p>
+    <p>
+        The next three methods represent the "Accept", "Ship", and "Cancel" operations on
+        the currently selected order:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> OrdersController : ControllerBase
+    {
+        …
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> AcceptOrder()
+        {
+            (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IOrdersView).CurrentOrder.Accept();
+            UpdateView();
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> ShipOrder()
+        {
+            (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IOrdersView).CurrentOrder.Ship();
+            UpdateView();
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> CancelOrder()
+        {
+            (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IOrdersView).CurrentOrder.Cancel();
+            UpdateView();
+        }
+    }</span></pre>
+    <p>
+        We might demand the view to disable certain operations depending on the current
+        order state. For example one cannot ship an order before it is accepted. UpdateView
+        is the method that analyzes the current order state and tells the view to enable/disable
+        certain operations:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> OrdersController : ControllerBase
+        …
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> UpdateView()
+        {
+            </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> ((View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IOrdersView).CurrentOrder </span><span style="color: #000000;">==</span><span style="color: #000000;"> </span><span style="color: #0000FF;">null</span><span style="color: #000000;">) </span><span style="color: #0000FF;">return</span><span style="color: #000000;">;
+            OrderState os </span><span style="color: #000000;">=</span><span style="color: #000000;"> (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IOrdersView).CurrentOrder.State;
+            (View </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IOrdersView).SetOperationsEnabling(
+                        os </span><span style="color: #000000;">==</span><span style="color: #000000;"> OrderState.Open, os </span><span style="color: #000000;">==</span><span style="color: #000000;"> OrderState.Pending,
+                        (os </span><span style="color: #000000;">==</span><span style="color: #000000;"> OrderState.Open) </span><span style="color: #000000;">||</span><span style="color: #000000;"> (os </span><span style="color: #000000;">==</span><span style="color: #000000;"> OrderState.Pending));
+        }
+</span></pre>
+    <p>
+        The OrdersController class should also have a CurrentOrderChanged operation for
+        the view to notify the controller when a user clicks on another order:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> OrdersController : ControllerBase
+        …
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> CurrentOrderChanged()
+        {
+            UpdateView();
+        }
+</span></pre>
+    <a id="Presentation"></a><h2>
+        Presentation</h2>
+    <p>
+        The presentation layer consists of view classes. All views in MVC# should implement
+        the IView interface. In addition view classes should conform to particular interfaces
+        dictated by the application logic layer. In our example such interfaces are ICustomersView
+        and IOrdersView. Depending on the presentation platform chosen, view classes should
+        inherit an appropriate base view class (either Windows form, or Web form, or Silverlight
+        user control). We will design views for all three platforms supported at the moment
+        (Windows, Web and Silverlight) and will start with Windows form
+        views.</p>
+    <a id="Customers view (Win)"></a><h3>
+        Customers view (Win)</h3>
+    <p>
+        First let us create the customers view for the Windows Forms presentation mechanism.
+        As mentioned above it should be a subclass of the Windows Form class and should
+        implement the IView interface. To reduce the amount of manual work we will make
+        it inherit from the WinFormView class - a simple Form subclass implementing the
+        IView interface.</p>
+    <pre><span style="color: #0000FF;">namespace</span><span style="color: #000000;"> MVCSharp.Examples.Basics.Presentation
+{
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> CustomersForm : WinFormView
+    {
+</span><span style="color: #000000;">        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> CustomersForm()
+        {
+            InitializeComponent();
+        }
+</span><span style="color: #000000;">    }
+}
+</span></pre>
+    <p>
+        Let us place a GridView component and a button on the form:</p>
+    <p>
+        <img src="Images/2.PNG"/>&nbsp;</p>
+    <p>
+        In order for the customers controller to talk to its view the latter should implement
+        the ICustomersView interface:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> CustomersForm : WinFormView, ICustomersView
+        ...
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> SetCustomersList(List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Customer</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> customers)
+        {
+            customersGridView.DataSource </span><span style="color: #000000;">=</span><span style="color: #000000;"> customers;
+        }</span>
+
+        <span style="color: #0000FF;">public</span><span style="color: #000000;"> Customer CurrentCustomer
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> customersGridView.CurrentRow </span><span style="color: #000000;">==</span><span style="color: #000000;"> </span><span style="color: #0000FF;">null</span><span style="color: #000000;"> </span><span style="color: #000000;">?</span><span style="color: #000000;"> </span><span style="color: #0000FF;">null</span><span style="color: #000000;"> :
+                         customersGridView.CurrentRow.DataBoundItem </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> Customer;}
+            </span><span style="color: #0000FF;">set</span><span style="color: #000000;"> { customersGridView.CurrentCell </span><span style="color: #000000;">=</span><span style="color: #000000;"> customersGridView.Rows[
+               (customersGridView.DataSource </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IList).IndexOf(value)].Cells[</span><span style="color: #800080;">0</span><span style="color: #000000;">];}
+        }</span></pre>
+    <p>
+        According to the MVP pattern views receive the user actions and then pass control
+        to the controller. In our case the customers view should handle the change of current
+        customer in the grid and the “Show Orders” button click:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> CustomersForm : WinFormView, ICustomersView
+        ...
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> customersGridView_CurrentCellChanged(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender,
+                                                          EventArgs e)
+        {
+            (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> CustomersController).CurrentCustomerChanged();
+        }
+
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> showOrdersButton_Click(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, EventArgs e)
+        {
+            (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> CustomersController).ShowOrders();
+        }
+</span></pre>
+    <p>
+        The last thing here is to point the MVC# framework that the above view class describes
+        the “Customers” view in the MainTask task. This is done with the View attribute:</p>
+    <pre><span style="color: #000000;">    [View(</span><span style="color: #0000FF;">typeof</span><span style="color: #000000;">(MainTask), MainTask.Customers</span><span style="color: #000000;">)]
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> CustomersForm : WinFormView, ICustomersView
+    …
+</span></pre>
+    <a id="Orders view (Win)"></a><h3>
+        Orders view (Win)</h3>
+    <p>
+        Similarly let us design the OrdersView form. It will contain a grid and three buttons:</p>
+    <p><img src="Images/3.PNG"/>&nbsp;</p>
+    <p>
+        In the same manner as it was with the CustomersView, the OrdersView class should
+        inherit from the WinFormView class and implement the IOrdersView interface for the framework and the controller to interact
+        with it. It should also have a [View] attribute to indicate its belonging to the
+        main task as the "Orders" view.</p>
+    <pre><span style="color: #000000;">    [View(</span><span style="color: #0000FF;">typeof</span><span style="color: #000000;">(MainTask), MainTask.Orders</span><span style="color: #000000;">)]
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> OrdersForm : WinFormView, IOrdersView
+    {
+        ...
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> SetOrdersList(List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Order</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> orders)
+        {
+            ordersGridView.DataSource </span><span style="color: #000000;">=</span><span style="color: #000000;"> orders;
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> Order CurrentOrder
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> ordersGridView.CurrentRow.DataBoundItem </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> Order; }
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> SetOperationsEnabling(</span><span style="color: #0000FF;">bool</span><span style="color: #000000;"> acceptIsEnabled,
+                      </span><span style="color: #0000FF;">bool</span><span style="color: #000000;"> shipIsEnabled, </span><span style="color: #0000FF;">bool</span><span style="color: #000000;"> cancelIsEnabled)
+        {
+            acceptOrderBtn.Enabled </span><span style="color: #000000;">=</span><span style="color: #000000;"> acceptIsEnabled;
+            shipOrderBtn.Enabled </span><span style="color: #000000;">=</span><span style="color: #000000;"> shipIsEnabled;
+            cancelOrderBtn.Enabled </span><span style="color: #000000;">=</span><span style="color: #000000;"> cancelIsEnabled;
+        }
+</span></pre>
+    <p>
+        The following code shows how the OrdersForm handles user actions and delegates processing
+        to the controller:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> OrdersForm : Form, IView, IOrdersView
+    {
+        ...
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> ordersGridView_CurrentCellChanged(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender,
+                                                       EventArgs e)
+        {
+            (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> OrdersController).CurrentOrderChanged();
+        }
+
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> acceptOrderBtn_Click(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, EventArgs e)
+        {
+            (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> OrdersController).AcceptOrder();
+        }
+
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> shipOrderBtn_Click(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, EventArgs e)
+        {
+            (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> OrdersController).ShipOrder();
+        }
+
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> cancelOrderBtn_Click(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, EventArgs e)
+        {
+            (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> OrdersController).CancelOrder();
+        }
+</span></pre>
+    <a id="Customers view (Web)"></a><h3>
+        Customers view (Web)</h3>
+    <p>
+        In Web environment the views design will be very similar to that in Windows. Views
+        will inherit from the WebFormView class and will contain a grid and buttons on their surface:</p>
+    <p><img src="Images/4.PNG"/>&nbsp;</p>
+    <p>
+        ICustomersView implementation will be identical to that in Windows environment:</p>
+    <pre><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> _Default : WebFormView, ICustomersView
+{
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> SetCustomersList(List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Customer</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> customers)
+    {
+        CustomersGridView.DataSource </span><span style="color: #000000;">=</span><span style="color: #000000;"> customers;
+    }
+
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> Customer CurrentCustomer
+    {
+        </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> (CustomersGridView.DataSource </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Customer</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">)
+                                    [CustomersGridView.SelectedIndex]; }
+        </span><span style="color: #0000FF;">set</span><span style="color: #000000;"> { CustomersGridView.SelectedIndex </span><span style="color: #000000;">=</span><span style="color: #000000;">
+               (CustomersGridView.DataSource </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> IList).IndexOf(value); }
+    }
+}</span></pre>
+    <p>
+        Button click and grid row selection event handler will look the same way too:</p>
+    <pre><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> _Default : WebFormView, ICustomersView
+    ...
+    </span><span style="color: #0000FF;">protected</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> ShowOrdersButton_Click(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, EventArgs e)
+    {
+        (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> CustomersController).ShowOrders();
+    }
+
+    </span><span style="color: #0000FF;">protected</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> CustomersGridView_SelectedIndexChanged(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender,
+                                                          EventArgs e)
+    {
+        (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> CustomersController).CurrentCustomerChanged();
+    }</span></pre>
+    <a id="Orders view (Web)"></a><h3>
+        Orders view (Web)</h3>
+    <p>
+        Here we do not list code for the orders Web form class as it is very similar to
+        its Windows analogue above. If desired, a reader may look into the full sources
+        of the example. Here is how the orders Web view looks in the designer surface:</p>
+    <p><img src="Images/5.PNG"/>&nbsp;</p>
+    <p>
+        To associate the designed Web forms with the "Customers" and "Orders" views of the main task we
+        use a slightly different technique (instead of [View] attributes):
+        we add [WebformsView] attributes to a placeholder class inside the Global.asax file:</p>
+    <pre><span style="color: #008000;">&lt;!------------------------</span><span style="color: #008000;"> Global.asax file </span><span style="color: #008000;">--------------------&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">runat</span><span style="color: #0000FF;">=&quot;server&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+    [WebformsView(typeof(MainTask), MainTask.Customers, &quot;Default.aspx&quot;)]
+    [WebformsView(typeof(MainTask), MainTask.Orders, &quot;Orders.aspx&quot;)]
+    class ViewDescriptions { }
+      
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span></pre>
+    <a id="Customers view (Silverlight)"></a><h3>
+        Customers view (Silverlight)</h3>
+    <p>
+        Views under Silverlight platform should inherit the <code>UserControlView</code> class. Thus, 
+        firstly we should create a new user control with the following XAML markup:</p>
+<pre><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">mvc:UserControlView
+    </span><span style="color: #FF0000;">xmlns:my</span><span style="color: #0000FF;">=
+&quot;clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data&quot;</span><span style="color: #FF0000;">
+    x:Class</span><span style="color: #0000FF;">=&quot;MVCSharp.Examples.Basics.Presentation.Silverlight.CustomersPage&quot;</span><span style="color: #FF0000;">
+    xmlns</span><span style="color: #0000FF;">=&quot;http://schemas.microsoft.com/client/2007&quot;</span><span style="color: #FF0000;">                         
+    xmlns:x</span><span style="color: #0000FF;">=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span><span style="color: #FF0000;">
+    xmlns:mvc</span><span style="color: #0000FF;">=&quot;clr-namespace:MVCSharp.Silverlight;assembly=MVCSharpSL&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">Grid</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">mvc:UserControlView</span><span style="color: #0000FF;">&gt;</span></pre>
+    <p>
+        Next, we are adding the customers data grid and the &quot;Show Orders&quot; button:</p>
+    <pre><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">mvc:UserControlView
+    </span><span style="color: #FF0000;">... </span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #FF0000;">Background</span><span style="color: #0000FF;">=&quot;White&quot;</span><span style="color: #FF0000;"> Margin</span><span style="color: #0000FF;">=&quot;5&quot;</span><span style="color: #FF0000;"> HorizontalAlignment</span><span style="color: #0000FF;">=&quot;Left&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">Grid</span><span style="color: #FF0000;">.RowDefinitions</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">RowDefinition </span><span style="color: #FF0000;">Height</span><span style="color: #0000FF;">=&quot;Auto&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">RowDefinition </span><span style="color: #FF0000;">Height</span><span style="color: #0000FF;">=&quot;Auto&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">Grid.RowDefinitions</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">my:DataGrid </span><span style="color: #FF0000;">x:Name</span><span style="color: #0000FF;">=&quot;CustomersGrid&quot;</span><span style="color: #FF0000;"> MaxWidth</span><span style="color: #0000FF;">=&quot;400&quot;</span><span style="color: #FF0000;"> MinHeight</span><span style="color: #0000FF;">=&quot;100&quot;</span><span style="color: #FF0000;">
+                     Grid.Row</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #FF0000;"> SelectionMode</span><span style="color: #0000FF;">=&quot;Single&quot;</span><span style="color: #FF0000;">
+                     SelectionChanged</span><span style="color: #0000FF;">=&quot;CustomersGrid_CurrentCellChanged&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">Button </span><span style="color: #FF0000;">Width</span><span style="color: #0000FF;">=&quot;75&quot;</span><span style="color: #FF0000;"> Height</span><span style="color: #0000FF;">=&quot;25&quot;</span><span style="color: #FF0000;"> HorizontalAlignment</span><span style="color: #0000FF;">=&quot;Right&quot;</span><span style="color: #FF0000;"> Grid.Row</span><span style="color: #0000FF;">=&quot;1&quot;</span><span style="color: #FF0000;">
+                Content</span><span style="color: #0000FF;">=&quot;Show Orders&quot;</span><span style="color: #FF0000;"> Margin</span><span style="color: #0000FF;">=&quot;3&quot;</span><span style="color: #FF0000;"> Click</span><span style="color: #0000FF;">=&quot;Button_Click&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000FF;">&gt;</span></pre>
+    <p>
+        Finally, we should add the event handlers to the code-behind 
+        CustomersPage.xaml.cs file, and make the view class implement the <code>ICustomersView</code> 
+        interface. The corresponding code looks almost identical to that for Winforms 
+        and Web platforms:</p>
+    <pre><span style="color: #000000;">    [View(</span><span style="color: #0000FF;">typeof</span><span style="color: #000000;">(MainTask), MainTask.Customers)]    
+    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> CustomersPage : UserControlView, ICustomersView
+        ...
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> SetCustomersList(List</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">Customer</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> customers)
+        {
+            CustomersGrid.ItemsSource </span><span style="color: #000000;">=</span><span style="color: #000000;"> customers;
+        }
+
+        </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> Customer CurrentCustomer
+        {
+            </span><span style="color: #0000FF;">get</span><span style="color: #000000;"> { </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> CustomersGrid.SelectedItem </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> Customer; }
+            </span><span style="color: #0000FF;">set</span><span style="color: #000000;"> { CustomersGrid.SelectedItem </span><span style="color: #000000;">=</span><span style="color: #000000;"> value; }
+        }
+
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> CustomersGrid_CurrentCellChanged(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, EventArgs e)
+        {
+            (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> CustomersController).CurrentCustomerChanged();
+        }
+
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> Button_Click(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, RoutedEventArgs e)
+        {
+            (Controller </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> CustomersController).ShowOrders();
+        }</span></pre>
+    <p>
+        Note that for binding the view class to the task we are using the <code>[View]</code>
+        attribute, like we did for the Windows Forms platform.</p>
+    <a id="Orders view (Silverlight)"></a><h3>
+        Orders view (Silverlight)</h3>
+    <p>
+        And again, we omit the description of the steps here, as everything is similar 
+        to what we have done already. If necessary, see the example sources.</p>
+    <a id="Starting the application"></a><h2>
+        Starting the application</h2>
+    <p>
+        Every MVC# application requires some configuration steps. All configuration data
+        is encapsulated in MVCConfiguration class instances. However instead of manually
+        setting up MVCConfiguration objects it is possible to obtain preconfigured instances
+        by the view managers' GetDefaultConfig() static method. After the configuration
+        is done it is time to start the task by passing its type to the TasksManager.StartTask(...)
+        method.</p>
+    <p>
+        The code to configure and to start the main task looks similar in Windows and Web environments,
+        the major difference is where to place that code. In Windows application we put
+        it in the Main method which is an entry point of a program:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">static</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> Program
+    {
+        [STAThread]
+        </span><span style="color: #0000FF;">static</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> Main()
+        {
+<span style="color: #000000;">            TasksManager tasksManager </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> TasksManager(WinformsViewsManager.
+                                                         GetDefaultConfig());
+            tasksManager.StartTask(</span><span style="color: #0000FF;">typeof</span><span style="color: #000000;">(MainTask));
+
+            Application.Run(Application.OpenForms[</span><span style="color: #800080;">0</span><span style="color: #000000;">]);</span>        
+        }
+    }
+</span></pre>
+    <p>
+        In Web applications we place the main task start code in the session start handler
+        in Global.asax file:</p>
+    <pre><span style="color: #008000;">&lt;!--</span><span style="color: #008000;">-------------------- Global.asax file ------------------</span><span style="color: #008000;">--&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">runat</span><span style="color: #0000FF;">=&quot;server&quot;</span><span style="color: #0000FF;">&gt;</span>
+    ...
+<span style="color: #000000;">    </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> Session_Start(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, EventArgs e) 
+    {
+        TasksManager tm </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> TasksManager(WebformsViewsManager.
+                                           GetDefaultConfig());
+        tm.StartTask(</span><span style="color: #0000FF;">typeof</span><span style="color: #000000;">(MainTask));
+    }</span></pre>
+                                           
+    <p>As for Silverlight platform, we use the Startup event handler of the global 
+        application class to start the main task:</p>
+    <pre><span style="color: #000000;">    </span><span style="color: #0000FF;">public</span><span style="color: #000000;"> </span><span style="color: #0000FF;">partial</span><span style="color: #000000;"> </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> App : Application
+    ...
+        </span><span style="color: #0000FF;">private</span><span style="color: #000000;"> </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> Application_Startup(</span><span style="color: #0000FF;">object</span><span style="color: #000000;"> sender, StartupEventArgs e)
+        {
+            TasksManager tasksManager </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> TasksManager(SilverlightViewsManager.
+                                                         GetDefaultConfig());
+            tasksManager.StartTask(</span><span style="color: #0000FF;">typeof</span><span style="color: #000000;">(MainTask));
+        }</span></pre>
+    <a id="Summary"></a><h2>
+        Summary</h2>
+    <p>
+        This example gives the general look on how to construct layered applications with
+        MVC# framework. It demonstrates the common idea of the Model-View-Presenter approch
+        - that is breaking an application into three layers: one for business objects (model),
+        another for application logic (controllers), and the last for presentation (views).
+        And it shows how MVC# simplifies implementing the MVP approach in your applications.</p>
+    <p>
+        <em>The source code of this example can be found under "Examples\Basics\" subfolder
+            of the MVC# framework root folder. The framework itself can be downloaded from <a
+                href="http://www.mvcsharp.org/Download.aspx">www.MVCSharp.org/download.aspx</a>.</em></p>
+
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; font-size:11px;">Copyright © www.MVCSharp.org</div>
+    </form>
+</body>
+
+<!-- Mirrored from mvcsharp.org/Getting_started_with_MVCSharp/Default.aspx by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 30 Oct 2008 03:46:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests.csproj", "{8489D30E-A22A-4512-923C-EDE7EDC022D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET MVC Store", "..\ASP.NET MVC Store.csproj", "{C41556BB-3A94-421F-86C0-0B8D58823DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCSharp", "..\..\..\MVCSharp\MVCSharp.csproj", "{C04A36B0-4A58-45D4-B95B-A4A58AFEBC95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8489D30E-A22A-4512-923C-EDE7EDC022D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8489D30E-A22A-4512-923C-EDE7EDC022D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8489D30E-A22A-4512-923C-EDE7EDC022D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8489D30E-A22A-4512-923C-EDE7EDC022D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C41556BB-3A94-421F-86C0-0B8D58823DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C41556BB-3A94-421F-86C0-0B8D58823DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C41556BB-3A94-421F-86C0-0B8D58823DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C41556BB-3A94-421F-86C0-0B8D58823DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04A36B0-4A58-45D4-B95B-A4A58AFEBC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04A36B0-4A58-45D4-B95B-A4A58AFEBC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04A36B0-4A58-45D4-B95B-A4A58AFEBC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04A36B0-4A58-45D4-B95B-A4A58AFEBC95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

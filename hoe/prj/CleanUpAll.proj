@@ -1,0 +1,17 @@
+<Project DefaultTargets="CleanUpAll" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ProjectReferences Include="MVCSharp\MVCSharp.csproj" />
+    <ProjectReferences Include="MVCSharp.Tests\MVCSharp.Tests.csproj" />
+    <ProjectReferences Include="Examples\Basics\Basics.csproj" />
+    <ProjectReferences Include="Examples\Basics (generics used)\Basics.csproj" />
+    <ProjectReferences Include="Examples\SimpleFormsViewsManager\SimpleFormsViewsManager.csproj" />
+    <ProjectReferences Include="Examples\WindowsFormsExample\WindowsFormsExample.csproj" />
+    <ProjectReferences Include="Examples\TasksInTabs (Winforms)\TasksInTabs.csproj" />
+    <ProjectReferences Include="Examples\TasksInteraction\TasksInteraction.csproj" />
+    <ProjectReferences Include="Examples\ASP.NET MVC Store\ASP.NET MVC Store.csproj" />
+    <ProjectReferences Include="Examples\Advanced (Office2007 UI and more)\AdvancedCustomization.csproj" />
+  </ItemGroup>
+  <Target Name="CleanUpAll">
+    <MSBuild Projects="@(ProjectReferences)" Targets="CleanUp"/>
+  </Target>
+</Project>

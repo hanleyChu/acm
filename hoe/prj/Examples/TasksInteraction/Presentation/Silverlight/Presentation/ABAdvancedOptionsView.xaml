@@ -1,0 +1,23 @@
+﻿<mvc:UserControlView xmlns:my="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    x:Class="MVCSharp.Examples.TasksInteraction.Presentation.Silverlight.ABAdvancedOptionsView"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:mvc="clr-namespace:MVCSharp.Silverlight;assembly=MVCSharpSL">
+    <Grid Background="Beige">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="WorkerOfTheMonthCB" Grid.Row="0"
+                  Content="Worker Of The Month"/>
+        <CheckBox x:Name="SpecialServicesCB" Grid.Row="1"
+                  Content="Special Services"/>
+        <Button Grid.Row="2" Width="50" Margin="0,10,0,0" Grid.Column="1"
+                Content="OK" Click="OkBtn_Click"/>
+    </Grid>
+</mvc:UserControlView>

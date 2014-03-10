@@ -1,0 +1,54 @@
+Version 0.8.5 - 11/01/2008
+
+	- Added support for .NET Compact Framework
+
+	- Added Mobile (.NET CF) presentation to the examples: Basics,
+	  Basics (generics used) and TasksInteraction.
+
+	- Updated to support Silverlight 2.0 Release. Generics are fully
+	  supported now (see the updated Basics (generics used) example).
+
+	- Improved Windows Forms presentation, fixed bugs.
+
+	- Added ability to use custom Navigator class. See [Task] attribute
+	  and MVCConfiguration.NavigatorType property.
+
+	- Made it possible to specify multiple views assembly. See
+	  MVCConfiguration.ViewsAssemblies property.
+
+	- Overall extensibility improvements.
+
+	- Added new example on extensibility features. See the
+	  Examples\Advanced (Office2007 UI and more) folder.
+
+	- Added Examples\TasksInTabs (Winforms) example.
+	  
+
+Version 0.8.1 - 07/08/2008
+
+	- Added support for Silverlight 2.0 (beta 2) platform.
+
+	- Added Silverlight presentation to the examples: Basics,
+	  Basics (generics used) and TasksInteraction.
+
+	- Improved support for Windows Forms, fixed some bugs (including bug
+	  #1936364 in the sourceforge tracker).
+
+	- Added generic WinForms user control view class (WinUserControlView<T>).
+
+Version 0.7.1 - 04/22/2008
+
+	- Generics support added (Usage example in "Basics (generics used)" sample).
+
+	- Collections (e.g. ViewInfoCollection) are enumerable now, and gained few
+	  useful methods.
+
+	- New StubNavigator class for use in tests.
+
+	- Added "ASP.NET MVC Store" example.
+
+	- Minor bugfixes.
+
+Version 0.6.2 - 02/11/2008
+
+	First public release.
