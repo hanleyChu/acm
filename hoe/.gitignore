@@ -1,9 +1,0 @@
-/database/mongo/backup/
-/database/mongo/bin/
-/database/mongo/data/
-/database/mongo/log/
-/release/
-/requires/
-**/debug/
-**/bin/
-**/release/

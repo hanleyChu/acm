@@ -1,4 +1,0 @@
-1.将Hoe.zip解压到你自己指定的安装路径里，不要放到c盘（因为里面有数据库，你以后的所有数据都在里面）
-2.安装Hoe/requires/dotNetFx40_Full_x86_x64.exe
-3.打开Hoe/mongo/install.bat,这个是数据库安装和服务启动，打开之后等待它结束即可。
-4.打开Hoe/Hoe.exe

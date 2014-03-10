@@ -1,1 +1,0 @@
-MSBuild "ASP.NET MVC Store.sln" /target:Build

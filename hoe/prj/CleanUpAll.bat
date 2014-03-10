@@ -1,1 +1,0 @@
-MSBuild CleanUpAll.proj

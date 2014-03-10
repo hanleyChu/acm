@@ -1,1 +1,0 @@
-MSBuild AdvancedCustomization.sln /target:Build

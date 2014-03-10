@@ -1,1 +1,0 @@
-MSBuild TasksInTabs.sln /target:Build
